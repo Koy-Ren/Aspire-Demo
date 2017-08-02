@@ -5,12 +5,12 @@ import javax.annotation.Resource;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import com.aspire.ssm.bean.Device;
-import com.aspire.ssm.service.DeviceServiceI;
-
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import com.aspire.ssm.bean.Device;
+import com.aspire.ssm.service.DeviceServiceI;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations="classpath:spring-mybatis.xml")
@@ -23,7 +23,7 @@ public class TestSSM {
 	public void testAdd() throws Exception{
 		
 		Device device = new Device();
-		device.setDeviceId("YYYYYSUDISIDUSY");
+		device.setDeviceId("testnotskip");
 		device.setDeviceName("test1");
 		device.setFirmVersion("version 1.2.3");
 		deviceServiceImpl.insertDevice(device);

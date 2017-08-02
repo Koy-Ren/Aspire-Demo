@@ -11,4 +11,20 @@
     <insert id="insertDevice" parameterType="com.aspire.ssm.bean.Device">
          insert into tempDevice(deviceId,deviceName,firmVersion) values(#{deviceId},#{deviceName},#{firmVersion})
     </insert>
+    
+    <select id="selectAll" resultType="com.aspire.ssm.bean.Device">
+        select * from tempDevice;
+    </select>
+    
+    <delete id="deleteDevice" parameterType="String">
+        delete from tempDevice where deviceId=#{deviceId}
+    </delete>
+    
+    <select id="selectAllFormal" resultType="com.aspire.ssm.bean.DeviceFormal">
+        select * from device;
+    </select>
+    
+    <insert id="insertDeviceFormal" parameterType="com.aspire.ssm.bean.DeviceFormal">
+        insert into device(deviceId, deviceName, firmVersion, deviceStatus) values(#{deviceId},#{deviceName},#{firmVersion},#{deviceStatus})
+    </insert>
 </mapper>

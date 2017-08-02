@@ -5,18 +5,23 @@
 <title>Aspire Demo</title>
 </head>
 <body>
-<form action="action_page.php" method="post">
-<div>
-<label>设备ID:</label><input type="text" name="deviceId" value="deviceId">
-<br/>
-<label>版本:</label><input type="text" name="firmVersion" value="version">
-<br/>
-<label>名称：</label><input type="text" name="deviceName" value="deviceName">
-<br/>
-</div>
-<input type="submit" value="添加设备">
+<form action="addDevice.do" method="post">
+<!-- <div> -->
+<!-- <label>设备ID:</label><input type="text" name="deviceId" value="deviceId"> -->
+<!-- <br/> -->
+<!-- <label>版本:</label><input type="text" name="firmVersion" value="version"> -->
+<!-- <br/> -->
+<!-- <label>名称：</label><input type="text" name="deviceName" value="deviceName"> -->
+<!-- <br/> -->
+<!-- </div> -->
+<th>设备ID:<input type="text" name="deviceId" value="deviceId"></th>
+<th>版本:<input type="text" name="firmVersion" value="version"></th>
+<th>名称:<input type="text" name="deviceName" value="deviceName"></th>
+<th><input type="submit" value="添加临时设备"></th>
 </form> 
 <br/>
-<tr><th>设备ID </th><th>版本 </th><th>名称 </th></tr>
+<form action="selectAllDevice.do" method="post">
+<input type="submit" value="查询">
+</form>
 </body>
 </html>
