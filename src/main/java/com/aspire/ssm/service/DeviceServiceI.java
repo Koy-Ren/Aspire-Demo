@@ -18,5 +18,11 @@ public interface DeviceServiceI {
 	public List<DeviceFormal> getDeviceAllFormal();
 	
 	public void insertDeviceFormal(DeviceFormal deviceFormal);
+	
+	public DeviceFormal getDeviceFormalById(String deviceId);
+
+	public List<DeviceFormal> getDeviceFormalByVersion(String firmVersion);
+
+	public List<DeviceFormal> getDeviceFormalByName(String deviceName);
 
 }

@@ -1,11 +1,13 @@
 package com.aspire.ssm.bean;
 
+import java.util.Date;
+
 public class DeviceFormal {
 	
 	private String deviceId;
 	private String deviceName;
 	private String firmVersion;
-	private String recordDateTime;
+	private Date recordDateTime;
 	private int deviceStatus;
 	public String getDeviceId() {
 		return deviceId;
@@ -25,10 +27,10 @@ public class DeviceFormal {
 	public void setFirmVersion(String firmVersion) {
 		this.firmVersion = firmVersion;
 	}
-	public String getRecordDateTime() {
+	public Date getRecordDateTime() {
 		return recordDateTime;
 	}
-	public void setRecordDateTime(String recordDateTime) {
+	public void setRecordDateTime(Date recordDateTime) {
 		this.recordDateTime = recordDateTime;
 	}
 	public int getDeviceStatus() {

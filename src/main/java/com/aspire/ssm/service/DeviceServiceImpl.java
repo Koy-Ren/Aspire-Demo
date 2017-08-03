@@ -2,8 +2,6 @@ package com.aspire.ssm.service;
 
 import java.util.List;
 
-import javax.annotation.Resource;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,6 +42,21 @@ public class DeviceServiceImpl implements DeviceServiceI {
 	public void insertDeviceFormal(DeviceFormal deviceFormal) {
 		// TODO Auto-generated method stub
 		deviceDao.insertDeviceFormal(deviceFormal);
+	}
+
+	public DeviceFormal getDeviceFormalById(String deviceId) {
+		// TODO Auto-generated method stub
+		return deviceDao.getDeviceFormalById(deviceId);
+	}
+
+	public List<DeviceFormal> getDeviceFormalByVersion(String firmVersion) {
+		// TODO Auto-generated method stub
+		return deviceDao.getDeviceFormalByVersion(firmVersion);
+	}
+
+	public List<DeviceFormal> getDeviceFormalByName(String deviceName) {
+		// TODO Auto-generated method stub
+		return deviceDao.getDeviceFormalByName(deviceName);
 	}
 
 } 

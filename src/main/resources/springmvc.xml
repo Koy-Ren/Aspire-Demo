@@ -21,7 +21,7 @@
     <!-- 开启springMVC注解功能 -->
     <context:annotation-config/>
     
-<!--     扫描使用注解所在的包 -->
+    <!-- 扫描使用注解所在的包 -->
     <context:component-scan base-package="com.aspire" use-default-filters="false">
      	<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
     </context:component-scan>
@@ -37,7 +37,7 @@
     
     <!-- 对转向页面的路径解析，设置前、后缀 -->
     <bean id="jspViewResolver"  class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	    <property name="prefix" value="/WEB-INF/"/>
+	    <property name="prefix" value="/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
 	<!-- 在上述视图解析器中，如果Controller返回的是blog/index，那么通过视图解析器解析之后的视图就是/jsp/blog/index.jsp -->

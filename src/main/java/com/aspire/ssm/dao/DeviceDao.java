@@ -18,5 +18,11 @@ public interface DeviceDao {
 	List<DeviceFormal> selectAllFormal();
 	
 	void insertDeviceFormal(DeviceFormal deviceFormal);
+	
+	DeviceFormal getDeviceFormalById(String deviceId);
+
+	List<DeviceFormal> getDeviceFormalByVersion(String firmVersion);
+
+	List<DeviceFormal> getDeviceFormalByName(String deviceName);
 
 }
