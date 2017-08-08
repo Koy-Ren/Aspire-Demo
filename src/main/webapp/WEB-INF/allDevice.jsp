@@ -42,8 +42,8 @@
 <!-- <input id="d12" type="text"/> -->
 <%-- <img onclick="WdatePicker({el:'d12'})" src="${pageContext.request.contextPath}/My97DatePicker/skin/datePicker.gif" width="16" height="22"> --%>
 
-<input type="text" id="timeBegin" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/>
+<!-- <input type="text" id="timeBegin" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/> -->
 
-<input type="text" id="timeEnd" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/>
+<!-- <input type="text" id="timeEnd" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" class="Wdate"/> -->
 </body>
 </html>

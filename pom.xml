@@ -106,7 +106,7 @@
             <artifactId>commons-dbcp</artifactId>  
             <version>1.2.2</version>  
         </dependency>  
-        <!-- JSTL标签类 -->  
+        <!-- JSTL标签类 -->
         <dependency>  
             <groupId>jstl</groupId>  
             <artifactId>jstl</artifactId>  

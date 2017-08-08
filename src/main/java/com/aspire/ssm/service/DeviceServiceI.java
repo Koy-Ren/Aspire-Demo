@@ -1,5 +1,6 @@
 package com.aspire.ssm.service;
 
+import java.util.Date;
 import java.util.List;
 
 import com.aspire.ssm.bean.Device;
@@ -24,5 +25,25 @@ public interface DeviceServiceI {
 	public List<DeviceFormal> getDeviceFormalByVersion(String firmVersion);
 
 	public List<DeviceFormal> getDeviceFormalByName(String deviceName);
+
+	public int getDeviceCount();
+
+	public List<DeviceFormal> getDeviceFormal(int startPos, int pageSize);
+
+	public int getDeviceCountByName(String deviceName);
+
+	public List<DeviceFormal> getDeviceFormalByName(String deviceName, int startPos, int pageSize);
+
+	public int getDeviceCountByVersion(String firmVersion);
+
+	public List<DeviceFormal> getDeviceFormalByVersion(String firmVersion, int startPos, int pageSize);
+
+	public int getDeviceCountByStatus(String deviceStatus);
+
+	public List<DeviceFormal> getDeviceFormalByStatus(String deviceStatus, int startPos, int pageSize);
+
+	public int getDeviceCountByTime(Date timeBegin, Date timeEnd);
+
+	public List<DeviceFormal> getDeviceFormalByTime(Date timeBegin, Date timeEnd, int startPos, int pageSize);
 
 }

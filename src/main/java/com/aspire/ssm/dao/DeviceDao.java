@@ -1,5 +1,6 @@
 package com.aspire.ssm.dao;
 
+import java.util.Date;
 import java.util.List;
 
 import com.aspire.ssm.bean.Device;
@@ -24,5 +25,25 @@ public interface DeviceDao {
 	List<DeviceFormal> getDeviceFormalByVersion(String firmVersion);
 
 	List<DeviceFormal> getDeviceFormalByName(String deviceName);
+
+	int getDeviceCount();
+
+	List<DeviceFormal> getDeviceFormal(int startPos, int pageSize);
+
+	int getDeviceCountByName(String deviceName);
+
+	List<DeviceFormal> getDeviceFormalByName(String deviceName, int startPos, int pageSize);
+
+	int getDeviceCountByVersion(String firmVersion);
+
+	List<DeviceFormal> getDeviceFormalByVersion(String firmVersion, int startPos, int pageSize);
+
+	int getDeviceCountByStatus(String deviceStatus);
+
+	List<DeviceFormal> getDeviceFormalByStatus(String deviceStatus, int startPos, int pageSize);
+
+	int getDeviceCountByTime(Date timeBegin, Date timeEnd);
+
+	List<DeviceFormal> getDeviceFormalByTime(Date timeBegin, Date timeEnd, int startPos, int pageSize);
 
 }
