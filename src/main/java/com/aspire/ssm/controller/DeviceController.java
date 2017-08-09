@@ -1,26 +1,17 @@
 package com.aspire.ssm.controller;
 
-import java.io.File;
-import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
-
-import javax.servlet.http.HttpServletRequest;
-
-import org.apache.commons.fileupload.FileItem;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.multipart.MultipartFile;
-
 import com.aspire.ssm.bean.Device;
 import com.aspire.ssm.bean.DeviceFormal;
 import com.aspire.ssm.service.DeviceServiceI;
@@ -256,22 +247,14 @@ public class DeviceController {
 
 		model.addAttribute("deviceAllFormal", deviceAllFormal);
 		model.addAttribute("page", page);
+		model.addAttribute("deviceId", "");
+		model.addAttribute("deviceName", "");
+		model.addAttribute("firmVersion", "");
+		model.addAttribute("deviceStatus", "");
+		model.addAttribute("timeBegin", "2000-01-01 00:00:00");
+		model.addAttribute("timeEnd", "2020-01-01 00:00:00");
 
 		return "WEB-INF/deviceFormal";
-	}
-
-	@RequestMapping(value = "/upload.do", method = RequestMethod.POST)
-	@ResponseBody
-	public String upload(MultipartFile file, HttpServletRequest request) throws IOException {
-		String path = request.getSession().getServletContext().getRealPath("upload");
-		String fileName = file.getOriginalFilename();
-		File dir = new File(path, fileName);
-		if (!dir.exists()) {
-			dir.mkdirs();
-		}
-		// MultipartFile自带的解析方法
-		file.transferTo(dir);
-		return "ok!";
 	}
 
 }

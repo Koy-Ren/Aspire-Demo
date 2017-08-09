@@ -7,55 +7,76 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Aspire Demo</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<!-- VENDOR CSS -->
+<link rel="stylesheet"
+	href="assets/vendor/bootstrap/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="assets/vendor/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="assets/vendor/linearicons/style.css">
+<link rel="stylesheet"
+	href="assets/vendor/chartist/css/chartist-custom.css">
+<!-- MAIN CSS -->
+<link rel="stylesheet" href="assets/css/main.css">
+<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+<link rel="stylesheet" href="assets/css/demo.css">
+<!-- GOOGLE FONTS -->
+<link
+	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700"
+	rel="stylesheet">
 </head>
+
 <body>
-	<form action="addDevice.do" method="post">
-		<table>
-			<tr>
-				<th>
-					设备ID:
-					<input type="text" name="deviceId" value="deviceId">
-				</th>
-				<th>
-					名称:
-					<input type="text" name="deviceName" value="deviceName">
-				</th>
-				<th>
-					版本：
-					<select name="firmVersion">
-						<option value="DTSK3">DTSK3</option>
-						<option value="DTSK4">DTSK4</option>
-						<option value="DTSK3A">DTSK3A</option>
-					</select>
-				</th>
-				<th>
-					时间:
-					<input type="text" name="recordDateTime"
-						value="<%Date date = new Date();
-			SimpleDateFormat t = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-			String time = t.format(date);%><%=time%>">
-				</th>
-				<th>
-					<input type="submit" value="添加临时设备"
-						onclick="javascript:alert('添加成功')">
-				</th>
-			</tr>
-		</table>
-	</form>
-	<br />
-	<table>
-		<tr>
-			<th>
-				<a href="selectAllDevice.do">
-					<input type="submit" value="显示临时设备">
-				</a>
-			</th>
-			<th>
-				<a href="devicePage.do?pageNow=1">
-					<input type="submit" value="显示正式设备">
-				</a>
-			</th>
-		</tr>
-	</table>
+
+	<!-- WRAPPER -->
+	<div id="wrapper">
+		<!-- NAVBAR -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<h3>Welcome !</h3>
+		</div>
+		</nav>
+		<!-- END NAVBAR -->
+		<!-- LEFT SIDEBAR -->
+		<div id="sidebar-nav" class="sidebar">
+			<div class="sidebar-scroll">
+				<nav>
+				<ul class="nav">
+					<li>
+						<a href="welcome.jsp" class="active">
+							<i class="lnr lnr-dice"></i>
+							<span>主页</span>
+						</a>
+						<a href="selectAllDevice.do" class="active">
+							<i class="lnr lnr-dice"></i>
+							<span>临时设备</span>
+						</a>
+						<a href="devicePage.do?pageNow=1" class="active">
+							<i class="lnr lnr-dice"></i>
+							<span>正式设备</span>
+						</a>
+					</li>
+				</ul>
+				</nav>
+			</div>
+		</div>
+		<!-- END LEFT SIDEBAR -->
+		<!-- MAIN -->
+		<div class="main">
+			<!-- MAIN CONTENT -->
+			<div class="main-content">
+				<div class="container-fluid">
+					<!-- OVERVIEW -->
+					<div class="panel panel-headline"></div>
+					欢迎！
+					<!-- END OVERVIEW -->
+				</div>
+			</div>
+			<!-- END MAIN CONTENT -->
+		</div>
+	</div>
+
 </body>
 </html>

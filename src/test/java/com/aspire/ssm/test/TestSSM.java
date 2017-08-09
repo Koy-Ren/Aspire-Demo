@@ -1,7 +1,5 @@
 package com.aspire.ssm.test;
 
-import javax.annotation.Resource;
-
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -23,7 +21,7 @@ public class TestSSM {
 	public void testAdd() throws Exception{
 		
 		Device device = new Device();
-		device.setDeviceId("testnotskip");
+		device.setDeviceId(String.valueOf((int)((Math.random()*9+1)*100000)));
 		device.setDeviceName("test1");
 		device.setFirmVersion("version 1.2.3");
 		deviceServiceImpl.insertDevice(device);

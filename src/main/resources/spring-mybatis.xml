@@ -31,9 +31,6 @@
 	<!-- 自动装配 -->
 	<context:annotation-config />
 
-	<!-- <bean id="userDao" class="com.aspire.ssm.dao.UserDao"/> <bean id="userServiceI" 
-		class="com.aspire.ssm.service.UserServiceI"/> -->
-
 	<bean
 		class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor" />
 
@@ -63,7 +60,7 @@
 		<!-- 实例化sqlSessionFactory时需要使用上述配置好的数据源以及SQL映射文件 -->
 		<property name="dataSource" ref="dataSource" />
 		<!-- 自动扫描 -->
-		<property name="mapperLocations" value="classpath:com/aspire/ssm/dao/*.xml" />
+		<property name="mapperLocations" value="classpath:mapper/*.xml" />
 	</bean>
 
 	<!-- 配置扫描器 -->

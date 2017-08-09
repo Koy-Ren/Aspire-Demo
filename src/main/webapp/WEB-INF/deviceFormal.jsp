@@ -27,6 +27,7 @@
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700"
 	rel="stylesheet">
 </head>
+
 <body>
 
 	<!-- WRAPPER -->
@@ -93,9 +94,17 @@
 				<nav>
 				<ul class="nav">
 					<li>
-						<a href="tables.html" class="active">
+						<a href="welcome.jsp" class="active">
 							<i class="lnr lnr-dice"></i>
-							<span>Devices</span>
+							<span>主页</span>
+						</a>
+						<a href="selectAllDevice.do" class="active">
+							<i class="lnr lnr-dice"></i>
+							<span>临时设备</span>
+						</a>
+						<a href="devicePage.do?pageNow=1" class="active">
+							<i class="lnr lnr-dice"></i>
+							<span>正式设备</span>
 						</a>
 					</li>
 				</ul>
@@ -108,7 +117,7 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">Devices</h3>
+					<h3 class="page-title">正式设备</h3>
 					<div class="row">
 						<div class="panel">
 							<div class="panel-body">

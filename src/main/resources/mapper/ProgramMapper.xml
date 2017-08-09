@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+                        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.aspire.ssm.dao.MusicFileDao">
+	<resultMap type="com.aspire.ssm.bean.MusicFile" id="musicFileResultMap">
+		<id column="id" property="id" />
+		<result column="name" property="name" />
+		<result column="systemFileName" property="systemFileName" />
+		<result column="duration" property="duration" />
+		<result column="md5" property="md5" />
+		<result column="extension" property="extension" />
+		<result column="size" property="size" />
+		<result column="recordDateTime" property="recordDateTime" />
+	</resultMap>
+
+	<insert id="insertMusicFile" parameterType="com.aspire.ssm.bean.MusicFile">
+		insert into
+		program(name,systemFileName,duration,md5,extension,size,recordDateTime)
+		values(#{name},#{systemFileName},#{duration},#{md5},#{extension},#{size},#{recordDateTime})
+	</insert>
+
+</mapper>
