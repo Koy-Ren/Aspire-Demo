@@ -20,4 +20,92 @@
 		values(#{name},#{systemFileName},#{duration},#{md5},#{extension},#{size},#{recordDateTime})
 	</insert>
 
+	<select id="getCount" resultType="Integer">
+		select COUNT(*) from program
+	</select>
+
+	<select id="getAllMusicFile" resultMap="musicFileResultMap">
+		select * from program
+		order by recordDateTime desc
+		limit #{0},#{1}
+	</select>
+
+	<select id="getCountByName" resultType="Integer">
+		select COUNT(*) from
+		program where name like CONCAT('%',#{name},'%' )
+	</select>
+
+	<select id="getMusicFileByName" resultMap="musicFileResultMap">
+		select * from program
+		where name like CONCAT('%',#{0},'%' ) 
+		order by recordDateTime desc
+		limit #{1},#{2}
+	</select>
+	
+	<select id="getCountByCondition" parameterType="java.util.Map" resultType="Integer">
+	    select COUNT(*) from program
+	    <where>
+	        <if test="name != null or name != ''">
+	            name like CONCAT('%',#{name},'%')
+	        </if>
+	        <if test="durationStatus == 'over' and duration != null">
+	            and duration &gt; #{duration}
+	        </if>
+	        <if test="durationStatus == 'under' and duration != null">
+	            and duration &lt; #{duration}
+	        </if>
+	        <if test="durationStatus == 'equal' and duration != null">
+	            and duration = #{duration}
+	        </if>
+	        <if test="fileStatus == 'over' and fileSize != null">
+	            and size &gt; #{fileSize}
+	        </if>
+	        <if test="fileStatus == 'under' and fileSize != null">
+	            and size &lt; #{fileSize}
+	        </if>
+	        <if test="fileStatus == 'equal' and fileSize != null">
+	            and size = #{fileSize}
+	        </if>
+	        <if test="timeBegin != null and timeEnd != null">
+	            and recordDateTime between #{timeBegin} and #{timeEnd}
+	        </if>
+	    </where>
+	</select>
+	
+	<select id="getMusicFileByCondition" parameterType="java.util.Map" resultMap="musicFileResultMap">
+	    select * from program
+	    <where>
+	        <if test="name != null or name != ''">
+	            name like CONCAT('%',#{name},'%')
+	        </if>
+	        <if test="durationStatus == 'over' and duration != null">
+	            and duration &gt; #{duration}
+	        </if>
+	        <if test="durationStatus == 'under' and duration != null">
+	            and duration &lt; #{duration}
+	        </if>
+	        <if test="durationStatus == 'equal' and duration != null">
+	            and duration = #{duration}
+	        </if>
+	        <if test="fileStatus == 'over' and fileSize != null">
+	            and size &gt; #{fileSize}
+	        </if>
+	        <if test="fileStatus == 'under' and fileSize != null">
+	            and size &lt; #{fileSize}
+	        </if>
+	        <if test="fileStatus == 'equal' and fileSize != null">
+	            and size = #{fileSize}
+	        </if>
+	        <if test="timeBegin != null and timeEnd != null">
+	            and recordDateTime between #{timeBegin} and #{timeEnd}
+	        </if>
+	    </where>
+	    order by recordDateTime desc
+	    limit #{startPos},#{pageSize}
+	</select>
+	
+	<delete id="deleteFileByRecordDateTime" parameterType="java.util.Map">
+	    delete from program where recordDateTime = #{recordDateTime}
+	</delete>
+
 </mapper>

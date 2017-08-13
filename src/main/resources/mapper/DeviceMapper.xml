@@ -4,82 +4,89 @@
 
 <mapper namespace="com.aspire.ssm.dao.DeviceDao">
 
-    <resultMap type="com.aspire.ssm.bean.DeviceFormal" id="deviceFormalResultMap">  
-        <id column="deviceId" property="deviceId"/>  
-        <result column="deviceName" property="deviceName"/>  
-        <result column="deviceStatus" property="deviceStatus"/>  
-        <result column="firmVersion" property="firmVersion"/>  
-        <result column="recordDateTime" property="recordDateTime"/>         
-    </resultMap>
-    
-    <!--  根据id查询得到一个user对象  -->
-    <select id="selectById" parameterType="String" resultType="com.aspire.ssm.bean.Device">
-        select * from tempDevice where deviceId=#{deviceId}
-    </select>
-    <!-- 在表中顺序插入对象 -->
-    <insert id="insertDevice" parameterType="com.aspire.ssm.bean.Device">
-         insert into tempDevice(deviceId,deviceName,firmVersion,recordDateTime) values(#{deviceId},#{deviceName},#{firmVersion},#{recordDateTime})
-    </insert>
-    
-    <select id="selectAll" resultType="com.aspire.ssm.bean.Device">
-        select * from tempDevice;
-    </select>
-    
-    <delete id="deleteDevice" parameterType="String">
-        delete from tempDevice where deviceId=#{deviceId}
-    </delete>
-    
-    <select id="selectAllFormal" resultType="com.aspire.ssm.bean.DeviceFormal">
-        select * from device;
-    </select>
-    
-    <insert id="insertDeviceFormal" parameterType="com.aspire.ssm.bean.DeviceFormal">
-        insert into device(deviceId, deviceName, firmVersion, recordDateTime, deviceStatus) 
-        values(#{deviceId},#{deviceName},#{firmVersion},#{recordDateTime},#{deviceStatus})
-    </insert>
-    
-    <select id="getDeviceFormalById" resultType="com.aspire.ssm.bean.DeviceFormal">
-        select * from device where deviceId=#{deviceId}
-    </select>
-    
-    <select id="getDeviceCountByVersion" resultType="Integer">
-        select COUNT(*) from device where firmVersion=#{firmVersion}
-    </select>
-    
-    <select id="getDeviceFormalByVersion" resultMap="deviceFormalResultMap">
-        select * from device where firmVersion=#{0} limit #{1},#{2}
-    </select>
-    
-    <select id="getDeviceCountByName" resultType="Integer">
-        select COUNT(*) from device where deviceName like CONCAT('%',#{deviceName},'%' )
-    </select>
-    
-    <select id="getDeviceFormalByName" resultMap="deviceFormalResultMap">
-<!--         select * from device where deviceName like CONCAT('%',#{deviceName},'%' ) -->
-             select * from device where deviceName like CONCAT('%',#{0},'%' ) limit #{1},#{2}
-    </select>
-    
-    <select id="getDeviceCount" resultType="Integer">
-        select COUNT(*) from device
-    </select>
-    
-    <select id="getDeviceFormal" resultMap="deviceFormalResultMap">
-        select * from device limit #{0},#{1}
-    </select>
-    
-    <select id="getDeviceCountByStatus" resultType="Integer">
-        select COUNT(*) from device where deviceStatus=#{deviceStatus}
-    </select>
-    
-    <select id="getDeviceFormalByStatus" resultMap="deviceFormalResultMap">
-        select * from device where deviceStatus=#{0} limit #{1},#{2}
-    </select>
-    
-    <select id="getDeviceCountByTime" resultType="Integer">
-        select COUNT(*) from device where recordDateTime between #{0} and #{1}
-    </select>
-    
-    <select id="getDeviceFormalByTime" resultMap="deviceFormalResultMap">
-        select * from device where recordDateTime between #{0} and #{1} limit #{2},#{3}
-    </select>
+	<resultMap type="com.aspire.ssm.bean.DeviceFormal" id="deviceFormalResultMap">
+		<id column="deviceId" property="deviceId" />
+		<result column="deviceName" property="deviceName" />
+		<result column="deviceStatus" property="deviceStatus" />
+		<result column="firmVersion" property="firmVersion" />
+		<result column="recordDateTime" property="recordDateTime" />
+	</resultMap>
+
+	<!-- 根据id查询得到一个user对象 -->
+	<select id="selectById" parameterType="String"
+		resultType="com.aspire.ssm.bean.Device">
+		select * from tempDevice where deviceId=#{deviceId}
+	</select>
+	<!-- 在表中顺序插入对象 -->
+	<insert id="insertDevice" parameterType="com.aspire.ssm.bean.Device">
+		insert into tempDevice(deviceId,deviceName,firmVersion,recordDateTime)
+		values(#{deviceId},#{deviceName},#{firmVersion},#{recordDateTime})
+	</insert>
+
+	<select id="selectAll" resultType="com.aspire.ssm.bean.Device">
+		select * from tempDevice;
+	</select>
+
+	<delete id="deleteDevice" parameterType="String">
+		delete from tempDevice where deviceId=#{deviceId}
+	</delete>
+
+	<select id="selectAllFormal" resultType="com.aspire.ssm.bean.DeviceFormal">
+		select * from device;
+	</select>
+
+	<insert id="insertDeviceFormal" parameterType="com.aspire.ssm.bean.DeviceFormal">
+		insert into device(deviceId, deviceName, firmVersion, recordDateTime,
+		deviceStatus)
+		values(#{deviceId},#{deviceName},#{firmVersion},#{recordDateTime},#{deviceStatus})
+	</insert>
+
+	<select id="getDeviceFormalById" resultType="com.aspire.ssm.bean.DeviceFormal">
+		select * from device where deviceId=#{deviceId}
+	</select>
+
+	<select id="getDeviceCountByVersion" resultType="Integer">
+		select COUNT(*) from device where firmVersion=#{firmVersion}
+	</select>
+
+	<select id="getDeviceFormalByVersion" resultMap="deviceFormalResultMap">
+		select * from device where firmVersion=#{0} limit #{1},#{2}
+	</select>
+
+	<select id="getDeviceCountByName" resultType="Integer">
+		select COUNT(*) from device where deviceName like
+		CONCAT('%',#{deviceName},'%' )
+	</select>
+
+	<select id="getDeviceFormalByName" resultMap="deviceFormalResultMap">
+		<!-- select * from device where deviceName like CONCAT('%',#{deviceName},'%' 
+			) -->
+		select * from device where deviceName like CONCAT('%',#{0},'%' ) limit
+		#{1},#{2}
+	</select>
+
+	<select id="getDeviceCount" resultType="Integer">
+		select COUNT(*) from device
+	</select>
+
+	<select id="getDeviceFormal" resultMap="deviceFormalResultMap">
+		select * from device limit #{0},#{1}
+	</select>
+
+	<select id="getDeviceCountByStatus" resultType="Integer">
+		select COUNT(*) from device where deviceStatus=#{deviceStatus}
+	</select>
+
+	<select id="getDeviceFormalByStatus" resultMap="deviceFormalResultMap">
+		select * from device where deviceStatus=#{0} limit #{1},#{2}
+	</select>
+
+	<select id="getDeviceCountByTime" resultType="Integer">
+		select COUNT(*) from device where recordDateTime between #{0} and #{1}
+	</select>
+
+	<select id="getDeviceFormalByTime" resultMap="deviceFormalResultMap">
+		select * from device where recordDateTime between #{0} and #{1} limit
+		#{2},#{3}
+	</select>
 </mapper>

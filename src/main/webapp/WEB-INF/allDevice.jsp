@@ -28,6 +28,19 @@
 <link
 	href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700"
 	rel="stylesheet">
+<link rel="stylesheet"
+	href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="../../css/demo.css" />
+<link rel="stylesheet" type="text/css" href="css/webuploader.css">
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath }/js/webuploader.css"
+	rel="external nofollow">
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/jquery-3.2.1.min.js"></script>
+<script type="text/javascript"
+	src="${pageContext.request.contextPath }/js/webuploader.js"></script>
+<script src="${pageContext.request.contextPath }/audiojs/audio.min.js"></script>
 </head>
 
 <body>
@@ -91,6 +104,10 @@
 						<a href="devicePage.do?pageNow=1" class="active">
 							<i class="lnr lnr-dice"></i>
 							<span>正式设备</span>
+						</a>
+						<a href="searchAllMusicFile.do?pageNow=1" class="active">
+							<i class="lnr lnr-dice"></i>
+							<span>文件</span>
 						</a>
 					</li>
 				</ul>
