@@ -6,3 +6,4 @@ This is a personal demo
 Just for study
 
 * 测试本地Idea与GitHub连接
+- 两个分支合并测试
