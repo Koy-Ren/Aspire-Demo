@@ -7,3 +7,5 @@ Just for study
 
 * 测试本地Idea与GitHub连接
 - 两个分支合并测试
+- test local github
+- again to push
