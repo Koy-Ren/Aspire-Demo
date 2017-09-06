@@ -12,6 +12,8 @@ public class UserController {
     @RequestMapping(value = "/index.action")
     public void addDevice(HttpServletRequest req, HttpServletResponse rep) {
 
+        //test
+
         String deviceId = req.getParameter("deviceId");
         String deviceName = req.getParameter("deviceName");
         String firmVersion = req.getParameter("firmVersion");
