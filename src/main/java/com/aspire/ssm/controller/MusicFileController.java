@@ -41,7 +41,7 @@ public class MusicFileController {
 		
 		//return "redirect:/searchAllMusicFile.do";
 
-		return "alert";
+		return "alert.jsp";
 		
 		
 
@@ -60,7 +60,7 @@ public class MusicFileController {
 		model.addAttribute("timeEnd", "2020-01-01 00:00:00");
 		
 		//return "alert";
-		return "upload";
+		return "upload.jsp";
 	}
 	
 	//条件搜索文件
@@ -76,7 +76,7 @@ public class MusicFileController {
 		model.addAttribute("timeBegin", request.getParameter("timeBegin"));
 		model.addAttribute("timeEnd", request.getParameter("timeEnd"));
 
-		return "upload";
+		return "upload.jsp";
 	}
 	
 	//删除文件
@@ -91,7 +91,7 @@ public class MusicFileController {
 		model.addAttribute("timeBegin", "2000-01-01 00:00:00");
 		model.addAttribute("timeEnd", "2020-01-01 00:00:00");
 		
-		return "upload";
+		return "upload.jsp";
 	}
 
 }

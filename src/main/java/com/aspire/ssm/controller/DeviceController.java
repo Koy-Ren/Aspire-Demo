@@ -54,7 +54,7 @@ public class DeviceController {
 
         deviceServiceImpl.insertDevice(device);
 
-        return "welcome";
+        return "welcome.jsp";
     }
 
     /**
@@ -66,7 +66,7 @@ public class DeviceController {
     public String selectAllDevice(Model model) {
         List<Device> deviceAll = deviceServiceImpl.getDeviceAll();
         model.addAttribute("deviceAll", deviceAll);
-        return "WEB-INF/allDevice";
+        return "WEB-INF/allDevice.jsp";
     }
 
     // 激活临时设备
@@ -103,7 +103,7 @@ public class DeviceController {
         model.addAttribute("deviceAllFormal", deviceAllFormal);
         model.addAttribute("page", page);
 
-        return "WEB-INF/deviceFormal";
+        return "WEB-INF/deviceFormal.jsp";
     }
 
     // 查询所有正式设备
@@ -112,7 +112,7 @@ public class DeviceController {
         List<DeviceFormal> deviceAllFormal = deviceServiceImpl.getDeviceAllFormal();
         model.addAttribute("deviceAllFormal", deviceAllFormal);
         // return "WEB-INF/deviceFormal";
-        return "WEB-INF/deviceFormal";
+        return "WEB-INF/deviceFormal.jsp";
     }
 
     // 查询正式设备
@@ -128,7 +128,7 @@ public class DeviceController {
             List<DeviceFormal> deviceAllFormal = new LinkedList<DeviceFormal>();
             deviceAllFormal.add(deviceFormal);
             model.addAttribute("deviceAllFormal", deviceAllFormal);
-            return "WEB-INF/deviceFormal";
+            return "WEB-INF/deviceFormal.jsp";
         } else if (!deviceName.equals("")) {
             Page page = null;
 
@@ -155,7 +155,7 @@ public class DeviceController {
             model.addAttribute("timeBegin", timeB);
             model.addAttribute("timeEnd", timeE);
 
-            return "WEB-INF/deviceFormal";
+            return "WEB-INF/deviceFormal.jsp";
         } else if (!firmVersion.equals("")) {
             Page page = null;
 
@@ -182,7 +182,7 @@ public class DeviceController {
             model.addAttribute("timeBegin", timeB);
             model.addAttribute("timeEnd", timeE);
 
-            return "WEB-INF/deviceFormal";
+            return "WEB-INF/deviceFormal.jsp";
         } else if (!deviceStatus.equals("")) {
             Page page = null;
 
@@ -209,7 +209,7 @@ public class DeviceController {
             model.addAttribute("timeBegin", timeB);
             model.addAttribute("timeEnd", timeE);
 
-            return "WEB-INF/deviceFormal";
+            return "WEB-INF/deviceFormal.jsp";
         } else {
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date timeBegin = sdf.parse(timeB);
@@ -240,7 +240,7 @@ public class DeviceController {
             model.addAttribute("timeBegin", timeB);
             model.addAttribute("timeEnd", timeE);
 
-            return "WEB-INF/deviceFormal";
+            return "WEB-INF/deviceFormal.jsp";
         }
     }
 
@@ -271,7 +271,7 @@ public class DeviceController {
         model.addAttribute("timeBegin", "2000-01-01 00:00:00");
         model.addAttribute("timeEnd", "2020-01-01 00:00:00");
 
-        return "WEB-INF/deviceFormal";
+        return "WEB-INF/deviceFormal.jsp";
     }
 
 }
