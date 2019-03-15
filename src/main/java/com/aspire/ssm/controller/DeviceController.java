@@ -70,7 +70,6 @@ public class DeviceController {
     }
 
     // 激活临时设备
-    @SuppressWarnings("unused")
     @RequestMapping(value = "/active.do", method = RequestMethod.GET)
     public String active(@RequestParam(value = "deviceId") String deviceId, Model model) {
         deviceFormal.setDeviceId(deviceId);
@@ -80,10 +79,6 @@ public class DeviceController {
         deviceFormal.setDeviceStatus(1);
         deviceServiceImpl.deleteDevice(deviceId);
         deviceServiceImpl.insertDeviceFormal(deviceFormal);
-        // List<DeviceFormal> deviceAllFormal =
-        // deviceServiceImpl.getDeviceAllFormal();
-        // model.addAttribute("deviceAllFormal", deviceAllFormal);
-        // return "WEB-INF/deviceFormal";
         String pageNow = "1";
 
         Page page = null;
